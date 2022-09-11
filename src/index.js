@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+/*
+ ! Default
+ ? Get the tag, create and define that as root.  
+ * const root = ReactDOM.createRoot(document.getElementById('root'));
+ * root.render(
+ * <React.StrictMode>
+ *  <App />
+ * </React.StrictMode>
+);
+*/
+
+// ! hydrate(element, container[, callback])
+// * Same as render(), but is used to hydrate a container whose HTML contents were rendered by ReactDOMServer. 
+// * React will attempt to attach event listeners to the existing markup.
+
+ReactDOM.hydrate(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
