@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3006;
 const app = express();
 
 app.get('/', (req, res) => {
-    
+
     // ! ReactDOMServer’s renderToString is used to render the app to a static HTML string.
     const app = ReactDOMServer.renderToString(<App />);
     const indexFile = path.resolve('./build/index.html');
@@ -34,5 +34,5 @@ app.get('/', (req, res) => {
 app.use(express.static('./build'));
   
 app.listen(PORT, () => {
-console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening on port ${PORT}`);
 });
