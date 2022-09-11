@@ -9,5 +9,21 @@ Note: Create React App’s `react-scripts` handles the installation of the follo
 
 <sub>FYI</sub>
 
-About Babel: [Babel is a JavaScript compiler](https://babeljs.io/docs/en).
+- About Babel: [Babel is a JavaScript compiler](https://babeljs.io/docs/en).
 - Videos around Babel: [Conferences and Meetups](https://babeljs.io/videos.html).
+
+
+About `webpack`:
+
+---
+
+- The `dev:build-server` script sets the environment to "development" and invokes webpack with the configuration file you created earlier. 
+- The `dev:start` script invokes `nodemon` to serve the built output.
+- The `dev` script invokes `npm-run-all` to run in parallel the build script and all scripts that start with `dev:*` - including `dev:build-server` and `dev:start`.
+
+Dependencies: 
+
+```bash
+npm install nodemon --save-dev
+npm install npm-run-all --save-dev
+```
